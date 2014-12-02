@@ -27,7 +27,7 @@ end
 token 'server_access_token'
 
 def retrieve_events(text)
-  event_type = {'1' => 'histories', '2' => 'upcomings'}
+  event_type = {'1' => 'upcomings', '2' => 'histories'}
   (HTTParty.get("http://kidsmeet.cn/agents/#{params[:ToUserName]}/#{event_type[text]}.json")).parsed_response['events']
 end
 
