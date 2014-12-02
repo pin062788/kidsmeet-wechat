@@ -11,13 +11,13 @@ on_text do
   if %w(1 2).include? text
     result = create_message(result, text)
   else
-    result = '查阅活动内容请发送“1”最新热门活动,“2”经典回顾'
+    result = "查阅活动内容请发送:\n   “1”最新热门活动\n   “2”经典回顾"
   end
   result
 end
 
 on_subscribe do
-  "感谢您的订阅!查阅活动内容请发送“1”最新热门活动,“2”经典回顾"
+  "感谢您的订阅!\n查阅活动内容请发送:\n   “1”最新热门活动\n   “2”经典回顾"
 end
 
 on_unsubscribe do
@@ -34,7 +34,7 @@ end
 def create_message(result, text)
   events = retrieve_events(text)
   if events.empty?
-    result = '您搜查询的内容为空,重新查询请发送“1”最新热门活动,“2”经典回顾'
+    result = "您搜查询的内容为空,重新查询请发送:\n   “1”最新热门活动\n   “2”经典回顾"
   else
     events.map do |item|
       result << {
