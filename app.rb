@@ -27,7 +27,7 @@ on_text do
 end
 
 on_subscribe do
-  "感谢#{params[:FromUserName]}的订阅!查阅活动内容请发送“1”最新热门活动,“2”经典回顾"
+  "感谢#{params}的订阅!查阅活动内容请发送“1”最新热门活动,“2”经典回顾"
 end
 
 on_unsubscribe do
